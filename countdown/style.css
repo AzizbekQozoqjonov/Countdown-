@@ -1,0 +1,158 @@
+@import url('https:fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+*
+{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins' , sans-serif;
+}
+.container
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #1f1d1d;
+    display: flex ;
+}
+.container .imgBx
+{
+    position: relative;
+    width: 450px;
+    height: 100%;
+    background: url(rasm.jpg);
+    background-size: cover ;
+}
+.container  .countdownBx
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   width: calc(100% - 450px);
+}
+.container  .countdownBx h2
+{
+    text-align: center;
+    font-size: 1.5em;
+    color: rgb(252, 252, 253);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 500;
+    line-height: 4em;
+
+}
+.container  .countdownBx h2 span
+{
+    font-size: 6em;
+    font-weight: 700;
+}
+.container  .countdownBx h2 span i
+{
+    font-style: initial;
+    color: rgb(243, 0, 0);
+    animation: animate 1s linear infinite;
+}
+@keyframes animate
+{
+    0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92.1%;
+    {
+        color: #0e3742;
+        text-shadow : none ;
+    }
+   18.1%,20%,30%,50%, 65%,80%,90%,91%,100%
+    {
+        color : #ffffff ; 
+        text-shadow : 0 0 10px #03bcf4,
+         0 0 20px #03bcf4,
+          0 0 40px #03bcf4,
+           0 0 80px #03bcf4,
+            0 0 160px #03bcf4;
+    }
+}
+
+.container  .countdownBx .countdown
+{
+    margin-top: 30px;
+    background: rgba(0,0,0,0,1);
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+}
+.container  .countdownBx .countdown div
+{
+    position: relative;
+    width: 100px;
+    text-align: center;
+    color: rgb(29, 213, 226);
+    font-size: 2.5em;
+    font-weight: 500;
+    margin: 0 15px;
+    margin-top: -25px;
+     animation: animate 1s linear infinite;
+}
+
+.container  .countdownBx .countdown div::before
+{
+    content: 'text';
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    color: rgb(27, 231, 238);
+    font-size: 0.35em;
+    font-weight: 500;
+    line-height: 35px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.container  .countdownBx .countdown div#day::before
+{
+    content: 'Days';
+}
+.container  .countdownBx .countdown div#hour::before
+{
+    content: 'Hours';
+}
+.container  .countdownBx .countdown div#minute::before
+{
+    content: 'Minutes';
+}
+.container  .countdownBx .countdown div#second::before
+{
+    content: 'Seconds';
+}
+.container  .countdownBx .countdown div#second,
+.container  .countdownBx .countdown div#second::before
+{
+    color: rgb(255, 0, 0);
+}
+@media (max-width: 991px)
+{
+    .container .imgBx
+    {
+        display: none;
+    }
+    .container  .countdownBx
+    {
+        width: 100%;
+    }
+}
+@media (max-width: 600px)
+{
+    .container .countdownBx h2 
+    {
+        font-size: 1.1em;
+    }
+      .container .countdownBx .countdown
+      {
+          height: 100px;
+      }
+        .container .countdownBx .countdown div
+        {
+            width: 80px;
+            font-size: 2em;
+            margin: 2;
+            margin-top: -25px;
+        }
+}
